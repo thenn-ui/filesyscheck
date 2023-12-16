@@ -1,0 +1,96 @@
+
+
+CONDITION 1
+
+badinode - file system with a bad type in an inode
+ERROR: bad inode.
+------------------------------------------------------------------------------
+
+CONDITION 2
+
+badaddr - file system with a bad direct address in an inode
+ERROR: bad direct address in inode.
+------------------------------------------------------------------------------
+badindir1 - file system with a bad indirect address in an inode
+ERROR: bad indirect address in inode.
+------------------------------------------------------------------------------
+badindir2 - file system with a bad indirect address in an inode
+ERROR: bad indirect address in inode.
+------------------------------------------------------------------------------
+
+CONDITION 3
+
+badroot - file system with a root directory in bad location
+ERROR: root directory does not exist.
+------------------------------------------------------------------------------
+badroot2 - file system with a bad root directory in good location
+ERROR: root directory does not exist.
+
+CONDITION 4
+
+badfmt - file system without . or .. directories
+ERROR: directory not properly formatted.
+
+CONDITION 5
+
+mrkfree - file system with an inuse direct block marked free
+ERROR: address used by inode but marked free in bitmap.
+------------------------------------------------------------------------------
+indirfree - file system with an inuse indirect block marked free
+ERROR: address used by inode but marked free in bitmap.
+
+CONDITION 6
+
+mrkused - file system with a free block marked used
+ERROR: bitmap marks block in use but it is not in use.
+
+CONDITION 7
+
+addronce - file system with a direct address used more than once
+ERROR: direct address used more than once.
+
+CONDITION 8
+
+addronce2 - file system with an indirect address used more than once
+ERROR: indirect address used more than once.
+
+CONDITION 9
+
+imrkused - file system with inode marked used, but not referenced in a directory
+ERROR: inode marked use but not found in a directory.
+
+CONDITION 10
+
+imrkfree - file system with inode marked free, but referenced in a directory
+ERROR: inode referred to in directory but marked free.
+
+CONDITION 11
+
+badrefcnt - file system which has an inode that is referenced more than its reference count
+ERROR: bad reference count for file.
+------------------------------------------------------------------------------
+badrefcnt2 - file system which has an inode that is referenced more than its reference count
+ERROR: bad reference count for file.
+
+CONDITION 12
+
+badlarge - large file system with an indirect directory appearing more than once
+ERROR:  directory appears more than once in file system.
+------------------------------------------------------------------------------
+dironce - file system with a directory appearing more than once
+ERROR:  directory appears more than once in file system.
+
+MISCELLANEOUS - No ERRORs
+
+mismatch - file system with .. pointing to the wrong directory
+------------------------------------------------------------------------------
+good - good file system
+------------------------------------------------------------------------------
+goodlarge - large good file system
+------------------------------------------------------------------------------
+goodlink - file system with only good directory link counts
+------------------------------------------------------------------------------
+goodrefcnt - file system with only good file reference counts
+------------------------------------------------------------------------------
+goodrm - good file system having some files removed
+------------------------------------------------------------------------------
